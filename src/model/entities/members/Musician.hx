@@ -1,7 +1,9 @@
 package model.entities.members;
 
+import utils.Queue;
+
 class Musician extends ConcertMember {
-    private var songs: List<Song>;
+    private var songs: Queue<Song>;
 
     public var name(default, null): String;
 
@@ -10,13 +12,13 @@ class Musician extends ConcertMember {
 
         this.name = name;
         
-        songs = new List<Song>();
+        songs = new Queue<Song>();
     }
 
     override public function update() {
     }
 
     public function addSong(song: Song) {
-        songs.add(song);
+        songs.push(song);
     }
 }
