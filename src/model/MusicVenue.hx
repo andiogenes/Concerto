@@ -38,7 +38,10 @@ class MusicVenue {
 
     public function addMusician(musician: Musician) {
         members.add(musician);
+
         stage.enrollMusician(musician);
+        
+        musician.setStage(stage);
     }
 
     public function getStore(): MerchStore {
