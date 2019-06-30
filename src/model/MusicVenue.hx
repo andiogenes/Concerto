@@ -4,7 +4,7 @@ import model.entities.members.Musician;
 import model.entities.members.Listener;
 import model.entities.MerchStore;
 import model.entities.Stage;
-import  model.entities.ConcertMember;
+import model.entities.ConcertMember;
 
 class MusicVenue {
     private var stage: Stage;
