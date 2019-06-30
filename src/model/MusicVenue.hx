@@ -31,6 +31,9 @@ class MusicVenue {
 
     public function addListener(listener: Listener) {
         members.add(listener);
+        
+        listener.setStage(stage);
+        listener.setStore(store);
     }
 
     public function addMusician(musician: Musician) {
