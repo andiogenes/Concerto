@@ -2,11 +2,11 @@ package model.entities.members;
 
 class Song {
     public var name(default, null): String;
-    public var duration(default, null): Int = 0;
+    public var duration(default, set): Int = 0;
 
     public function new(name: String, duration: Int) {
         this.name = name;
-        set_duration(duration);
+        this.duration = duration;
     }
 
     function set_duration(_duration: Int): Int {
