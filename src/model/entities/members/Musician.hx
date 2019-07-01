@@ -30,6 +30,14 @@ class Musician extends ConcertMember {
         songs.push(song);
     }
 
+    public function getCurrentSong(): Song {
+        return songs.first();
+    }
+    
+    public function endCurrentSong() {
+        songs.pop();
+    }
+
     public function informAboutPerformance() {
         fsm.setState(new MusicianWalkState(fsm));
     }
