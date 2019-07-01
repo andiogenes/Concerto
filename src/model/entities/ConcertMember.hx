@@ -8,6 +8,7 @@ class ConcertMember {
 
     public var x(get, null): Float;
     public var y(get, null): Float;
+    public var isDisposed(default, null): Bool;
 
     private function new(x: Float, y: Float, ?stage: Stage) {
         position = new Point(x, y);
@@ -15,6 +16,8 @@ class ConcertMember {
         if (stage != null) {
             this.stage = stage;
         }
+
+        isDisposed = false;
     }
 
     public function update() {}
@@ -25,6 +28,10 @@ class ConcertMember {
 
     public function setStage(stage: Stage) {
         this.stage = stage;
+    }
+
+    public function dispose() {
+        isDisposed = true;
     }
 
     function get_x(): Float {
