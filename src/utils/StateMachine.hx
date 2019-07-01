@@ -33,7 +33,7 @@ class StateMachineOf<T> {
     private var state: StateOf<T> = null;
     private var owner: T;
 
-    private function new(owner: T) {
+    public function new(owner: T) {
         this.owner = owner;
     }
 
