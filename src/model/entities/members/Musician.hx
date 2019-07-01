@@ -1,5 +1,6 @@
 package model.entities.members;
 
+import model.states.MusicianWalkState;
 import utils.StateMachine.StateMachineOf;
 import utils.Queue;
 
@@ -25,5 +26,9 @@ class Musician extends ConcertMember {
 
     public function addSong(song: Song) {
         songs.push(song);
+    }
+
+    public function informAboutPerformance() {
+        fsm.setState(new MusicianWalkState(fsm));
     }
 }
