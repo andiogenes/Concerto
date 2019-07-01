@@ -36,6 +36,10 @@ class Stage {
         return cone;
     }
 
+    public function setCone(cone: SoundPropagationCone) {
+        this.cone = cone;
+    }
+
     function set_musicQuality(_musicQuality: Int): Int {
         if (_musicQuality >= 0) {
             musicQuality = _musicQuality;
