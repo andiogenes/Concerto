@@ -4,6 +4,7 @@ import utils.Point;
 
 class ConcertMember {
     private var position: Point;
+    private var spawnPosition: Point;
     private var stage: Stage;
 
     public var x(get, set): Float;
@@ -12,6 +13,7 @@ class ConcertMember {
 
     private function new(x: Float, y: Float, ?stage: Stage) {
         position = new Point(x, y);
+        spawnPosition = new Point(x, y);
 
         if (stage != null) {
             this.stage = stage;
@@ -32,6 +34,10 @@ class ConcertMember {
 
     public function dispose() {
         isDisposed = true;
+    }
+
+    public function getSpawnPosition(): Point {
+        return spawnPosition;
     }
 
     function get_x(): Float {
