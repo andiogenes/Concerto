@@ -1,6 +1,11 @@
 package model.entities.members;
 
+import utils.StateMachine.StateMachineOf;
+import utils.StateMachine.StateOf;
+
 class Listener extends ConcertMember {
+    private var fsm: StateMachineOf<Listener>;
+
     private var store: MerchStore;
 
     public var mood(default, set): Int;
@@ -12,10 +17,12 @@ class Listener extends ConcertMember {
         if (store != null) {
             this.store = store;
         }
+
+        fsm = new StateMachineOf<Listener>(this);
     }
 
     override public function update() {
-        
+        fsm.update();
     }
 
     public function getStore(): MerchStore {
