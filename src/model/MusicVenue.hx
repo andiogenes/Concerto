@@ -26,6 +26,10 @@ class MusicVenue {
     public function update() {
         for (v in members) {
             v.update();
+
+            if (v.isDisposed == true) {
+                members.remove(v);
+            }
         }
     }
 
