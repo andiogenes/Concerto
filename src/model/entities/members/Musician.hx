@@ -33,6 +33,10 @@ class Musician extends ConcertMember {
     public function getCurrentSong(): Song {
         return songs.first();
     }
+
+    public function hasSongs(): Bool {
+        return !songs.isEmpty();
+    }
     
     public function endCurrentSong() {
         songs.pop();
