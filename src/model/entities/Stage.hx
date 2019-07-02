@@ -24,7 +24,7 @@ class Stage {
         musiciansQueue.push(musician);
     }
 
-    public function currentMusician(): Musician {
+    public function getCurrentMusician(): Musician {
         return musiciansQueue.first();
     }
 
