@@ -2,6 +2,7 @@ package model.entities.members;
 
 import utils.StateMachine.StateMachineOf;
 import utils.StateMachine.StateOf;
+import model.states.ListenerWalkToSceneState;
 
 class Listener extends ConcertMember {
     public static final TYPE: String = "Listener";
@@ -23,6 +24,7 @@ class Listener extends ConcertMember {
         this.objectType = TYPE;
 
         fsm = new StateMachineOf<Listener>(this);
+        fsm.setState(new ListenerWalkToSceneState(fsm));
     }
 
     override public function update() {
