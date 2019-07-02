@@ -1,5 +1,11 @@
+import app.Application;
 class Main {
 	static function main() {
-		trace("Hello, world!");
+		try {
+			var app = new Application();
+		}
+		catch (e: Dynamic) {
+			trace(Std.string(e));
+		}
 	}
 }
