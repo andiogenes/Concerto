@@ -3,7 +3,7 @@ package model.entities;
 import utils.Point;
 
 class ConcertMember {
-    private var objectType: String = "";
+    public var objectType(default, null): String = "";
 
     private var position: Point;
     private var spawnPosition: Point;
