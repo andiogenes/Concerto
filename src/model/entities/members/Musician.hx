@@ -5,6 +5,8 @@ import utils.StateMachine.StateMachineOf;
 import utils.Queue;
 
 class Musician extends ConcertMember {
+    public static final TYPE: String = "Musician";
+
     private var fsm: StateMachineOf<Musician>;
 
     private var songs: Queue<Song>;
@@ -17,6 +19,7 @@ class Musician extends ConcertMember {
 
         this.name = name;
         this.tuneUpDuration = duration;
+        this.objectType = TYPE;
         
         songs = new Queue<Song>();
         fsm = new StateMachineOf<Musician>(this);

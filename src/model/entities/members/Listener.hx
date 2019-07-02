@@ -4,6 +4,8 @@ import utils.StateMachine.StateMachineOf;
 import utils.StateMachine.StateOf;
 
 class Listener extends ConcertMember {
+    public static final TYPE: String = "Listener";
+
     private var fsm: StateMachineOf<Listener>;
 
     private var store: MerchStore;
@@ -17,6 +19,8 @@ class Listener extends ConcertMember {
         if (store != null) {
             this.store = store;
         }
+
+        this.objectType = TYPE;
 
         fsm = new StateMachineOf<Listener>(this);
     }
