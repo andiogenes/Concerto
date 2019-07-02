@@ -14,13 +14,16 @@ class Listener extends ConcertMember {
     public var mood(default, set): Int;
     public var money(default, set): Int;
 
-    public function new(x: Float, y: Float, ?stage: Stage, ?store: MerchStore) {
+    public function new(x: Float, y: Float, mood: Int, money: Int, ?stage: Stage, ?store: MerchStore) {
         super(x, y, stage);
 
         if (store != null) {
             this.store = store;
         }
 
+        this.mood = mood;
+        this.money = money;
+        
         this.objectType = TYPE;
 
         fsm = new StateMachineOf<Listener>(this);
