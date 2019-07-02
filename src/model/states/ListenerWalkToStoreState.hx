@@ -22,7 +22,7 @@ class ListenerWalkToStoreState extends StateOf<Listener> {
         // No musucian on stage => 
         // concert ended => 
         // switch to 'leave concert' state
-        if (stage.currentMusician() == null) {
+        if (stage.getCurrentMusician() == null) {
             fsm.setState(new ListenerLeaveState(fsm));
             return;
         }
