@@ -63,25 +63,23 @@ class JSView extends View {
         endAngle = dirAngle + cone.angle/2;
     }
 
-        context.save();
-            context.fillStyle = 'rgba(0, 255, 0, 0.5)';
-            context.strokeStyle = 'rgb(0, 255, 0)';
-            context.moveTo(centerX, centerY);
-            context.arc(centerX, centerY, cone.radius, startAngle, endAngle);
-            context.lineTo(centerX, centerY);
-            context.fill();
-            context.stroke();
-        context.restore();
+    override function drawCone() {
+        context.strokeStyle = '#222222';
+        context.lineWidth = 2;
+        context.setLineDash([20, 5]);
+        context.moveTo(centerX, centerY);
+        context.arc(centerX, centerY, venue.getStage().getCone().radius, startAngle, endAngle);
+        context.lineTo(centerX, centerY);
+        context.stroke();
     }
 
     override function printText(x: Float, y: Float, caption: String) {
-        context.save();
-            context.font = '20px Sans-serif';
-            context.strokeStyle = 'black';
-            context.lineWidth = 4;
-            context.strokeText(caption, x, y + 10);
-            context.fillStyle = 'white';
-            context.fillText(caption, x, y + 10);
-        context.restore();
+        context.font = '20px Sans-serif';
+        context.strokeStyle = 'black';
+        context.lineWidth = 4;
+        context.setLineDash([]);
+        context.strokeText(caption, x, y + 10);
+        context.fillStyle = 'white';
+        context.fillText(caption, x, y + 10);
     }
 }
