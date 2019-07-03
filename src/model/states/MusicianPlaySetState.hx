@@ -13,12 +13,20 @@ class MusicianPlaySetState extends StateOf<Musician> {
     public function new(fsm: StateMachineOf<Musician>) {
         super(fsm);
 
-        // TODO: set stage music quality here
         currentSong = owner.getCurrentSong();
+
+        if (currentSong != null) {
+            owner.getStage().musicQuality = currentSong.quality;
+        }
     }
 
     override public function update() {
         if (owner.hasSongs() == false) {
+            // no songs => leave concert, next musician plays on stage
+            owner.getStage().musicQuality = 0;
+            owner.getStage().endMusician();
+            owner.getStage().callCurrentMusicianToScene();
+
             fsm.setState(new MusicianLeaveState(fsm));
             return;
         }
@@ -26,9 +34,12 @@ class MusicianPlaySetState extends StateOf<Musician> {
         if (songElapsed >= currentSong.duration) {
             songElapsed = 0;
 
-            // TODO: set stage music quality here
             owner.endCurrentSong();
             currentSong = owner.getCurrentSong();
+
+            if (currentSong != null) {
+                owner.getStage().musicQuality = currentSong.quality;
+            }
             return;
         }
 
