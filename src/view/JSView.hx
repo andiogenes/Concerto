@@ -26,9 +26,11 @@ class JSView extends View {
         context = canvas.getContext2d();
         context.imageSmoothingEnabled = false;
 
+        calculateConeData();
+
         Browser.window.onload = function(e) {
             Browser.document.body.appendChild(canvas);
-            loop(0);
+            Browser.window.requestAnimationFrame(loop);
         }
     }
 
@@ -46,15 +48,20 @@ class JSView extends View {
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    override function drawCone() {
+    var centerX: Float;
+    var centerY: Float;
+    var startAngle: Float;
+    var endAngle: Float;
+    function calculateConeData() {
         var cone = venue.getStage().getCone();
-        var centerX = venue.getStage().x;
-        var centerY = venue.getStage().y;
+        centerX = venue.getStage().x;
+        centerY = venue.getStage().y;
 
         var dirLen = Math.sqrt(cone.getDirection().x*cone.getDirection().x+cone.getDirection().y*cone.getDirection().y);
         var dirAngle = Math.acos(cone.getDirection().x/dirLen);
-        var startAngle = dirAngle - cone.angle/2;
-        var endAngle = dirAngle + cone.angle/2;
+        startAngle = dirAngle - cone.angle/2;
+        endAngle = dirAngle + cone.angle/2;
+    }
 
         context.save();
             context.fillStyle = 'rgba(0, 255, 0, 0.5)';
