@@ -1,0 +1,49 @@
+{
+    "width": 800,
+    "height": 600,
+    "minListeners": 100,
+    "maxListeners": 200,
+    "minListenerMoney": 50,
+    "maxListenerMoney": 150,
+    "store": {
+        "x": 80,
+        "y": 300,
+        "items": [
+            {"price": 10, "quality": 20}
+        ]
+    },
+    "stage": {
+        "x": 400,
+        "y": 300,
+        "directionX": 0,
+        "directionY": 1,
+        "radius": 100,
+        "angle": 2.57079633,
+        "soundQuality": 10
+    },
+    "musicians": [
+        {
+            "name": "Tool",
+            "tuneUp": 30,
+            "songs": [
+                {"name": "Lateralus", "duration": 36, "quality": 5},
+                {"name": "Rosetta Stoned", "duration": 48, "quality": 10}
+            ]
+        },
+        {
+            "name": "Cream",
+            "tuneUp": 10,
+            "songs": [
+                {"name": "White Room", "duration": 65, "quality": 6},
+                {"name": "Ballad of Brave Ulysses", "duration": 123, "quality": 8}
+            ]
+        },
+        {
+            "name": "Darude",
+            "tuneUp": 45,
+            "songs": [
+                {"name": "Sand Storm", "duration": 345, "quality": 4}
+            ]
+        }
+    ]
+}

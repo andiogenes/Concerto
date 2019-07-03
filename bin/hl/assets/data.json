@@ -1,0 +1,38 @@
+{
+    "width": 800,
+    "height": 600,
+    "store": {
+        "x": 0,
+        "y": 300,
+        "items": [
+            {"price": 10, "quality": 20}
+        ]
+    },
+    "stage": {
+        "x": 400,
+        "y": 300,
+        "directionX": 1,
+        "directionY": 1,
+        "radius": 100,
+        "angle": 1.57079633,
+        "soundQuality": 10
+    },
+    "musicians": [
+        {
+            "name": "Tool",
+            "tuneUp": 30,
+            "songs": [
+                {"name": "Lateralus", "duration": 1234},
+                {"name": "Rosetta Stoned", "duration": 1234}
+            ]
+        },
+        {
+            "name": "Cream",
+            "tuneUp": 50,
+            "songs": [
+                {"name": "White Room", "duration": 654},
+                {"name": "Ballad of Brave Ulysses", "duration": 232}
+            ]
+        }
+    ]
+}

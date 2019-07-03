@@ -1,0 +1,6 @@
+base.hxml
+-D concerto_heaps
+-lib heaps
+-lib hlsdl
+-D hl_ver=1.9.0
+-hl bin/hl/concerto.hl

@@ -1,0 +1,4 @@
+base.hxml
+-D concerto_js
+-dce full
+-js bin/js/concerto.js
