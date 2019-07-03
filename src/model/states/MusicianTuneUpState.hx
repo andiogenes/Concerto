@@ -4,7 +4,7 @@ import utils.StateMachine;
 import model.entities.members.Musician;
 
 class MusicianTuneUpState extends StateOf<Musician> {
-    private static final TIME_STAMP: Float = 0.005;
+    private static final TIME_STAMP: Float = 0.75;
 
     var elapsed: Float = 0;
 
