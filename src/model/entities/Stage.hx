@@ -5,6 +5,8 @@ import utils.Queue;
 import model.entities.members.Musician;
 
 class Stage {
+    private static final CAPACITY_CONSTRAINT_KOEF = 0.00778;
+
     private var position: Point;
     private var musiciansQueue: Queue<Musician>;
     private var cone: SoundPropagationCone;
@@ -13,6 +15,9 @@ class Stage {
     public var y(get, null): Float;
     public var musicQuality(default, set): Int = 0;
     public var soundQuality(default, set): Int = 0;
+    
+    public var capacity(default, null): Int = 0;
+    public var listenersCount(default, set): Int = 0;
 
     public function new(x: Float, y: Float) {
         position = new Point(x, y);
@@ -46,6 +51,13 @@ class Stage {
 
     public function setCone(cone: SoundPropagationCone) {
         this.cone = cone;
+        setCapacity();
+    }
+
+    private function setCapacity() {
+        var coneArea = (cone.angle * cone.radius * cone.radius) / 2;
+
+        capacity = Math.round(coneArea * CAPACITY_CONSTRAINT_KOEF);
     }
 
     function set_musicQuality(_musicQuality: Int): Int {
@@ -70,5 +82,13 @@ class Stage {
 
     function get_y(): Float {
         return position.y;
+    }
+
+    function set_listenersCount(_listenersCount: Int): Int {
+        if (_listenersCount >= 0) {
+            listenersCount = _listenersCount;
+        }
+
+        return listenersCount;
     }
 }
