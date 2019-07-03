@@ -1,3 +1,4 @@
 /.vscode
-/bin
-*.hxml
+concerto.hl
+concerto.js
+#*.hxml
