@@ -7,13 +7,28 @@ import model.entities.members.Listener;
 
 class ListenerWalkToSceneState extends StateOf<Listener> {
     var stage: Stage;
+    var cone: SoundPropagationCone;
+
     var minDistance: Float;
+    var minAngle: Float;
+    var maxAngle: Float;
     
     public function new(fsm: StateMachineOf<Listener>) {
         super(fsm);
 
         stage = owner.getStage();
-        minDistance = stage.getCone().radius;
+        cone = stage.getCone();
+
+        minDistance = cone.radius;
+
+        calculateAngles();
+    }
+
+    function calculateAngles() {
+        var dirLen = Math.sqrt(cone.getDirection().x*cone.getDirection().x+cone.getDirection().y*cone.getDirection().y);
+        var dirAngle = Math.acos(cone.getDirection().x/dirLen);
+        minAngle = dirAngle - cone.angle/2;
+        maxAngle = dirAngle + cone.angle/2;
     }
 
     override public function update() {
@@ -32,7 +47,26 @@ class ListenerWalkToSceneState extends StateOf<Listener> {
         // Listener reachs stage =>
         // choose place in front of stage and switch to 'listen' state
         if (length <= minDistance) {
-            // TODO: set listener position here
+            stage.listenersCount++;
+
+            var angle = utils.Random.randomizeF(minAngle, maxAngle);
+            var radius = if (stage.capacity == 0 || cone.angle == 0) {
+                5;
+            } else {
+                (stage.listenersCount/stage.capacity) *
+                 Math.sqrt((2*stage.capacity)/(Stage.CAPACITY_CONSTRAINT_KOEF*cone.angle));
+            }
+
+            if (radius < 30 && radius < cone.radius) {
+                radius = cone.radius/2 + radius * 0.25;
+            }
+
+            var x = Math.cos(angle)*radius;
+            var y = Math.sin(angle)*radius;
+
+            owner.x = stage.x + x;
+            owner.y = stage.y + y;
+
             fsm.setState(new ListenerListenState(fsm));
             return;
         }

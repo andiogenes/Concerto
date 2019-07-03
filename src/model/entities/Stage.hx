@@ -5,7 +5,7 @@ import utils.Queue;
 import model.entities.members.Musician;
 
 class Stage {
-    private static final CAPACITY_CONSTRAINT_KOEF = 0.00778;
+    public static final CAPACITY_CONSTRAINT_KOEF = 0.00778;
 
     private var position: Point;
     private var musiciansQueue: Queue<Musician>;
