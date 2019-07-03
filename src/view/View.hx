@@ -55,8 +55,8 @@ class View {
 
         storeDisplay.draw(venue.getStore().x, venue.getStore().y);
 
-        stageDisplay.draw(venue.getStage().x, venue.getStage().y);
         drawCone();
+        stageDisplay.draw(venue.getStage().x, venue.getStage().y);
 
         drawMembers();
         
