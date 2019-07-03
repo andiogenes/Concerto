@@ -11,8 +11,8 @@ class Stage {
     
     public var x(get, null): Float;
     public var y(get, null): Float;
-    public var musicQuality(default, set): Int;
-    public var soundQuality(default, set): Int;
+    public var musicQuality(default, set): Int = 0;
+    public var soundQuality(default, set): Int = 0;
 
     public function new(x: Float, y: Float) {
         position = new Point(x, y);
