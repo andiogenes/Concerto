@@ -28,6 +28,14 @@ class Stage {
         return musiciansQueue.first();
     }
 
+    public function callCurrentMusicianToScene() {
+        var musician = getCurrentMusician();
+
+        if (musician != null) {
+            musician.informAboutPerformance();
+        }
+    }
+
     public function endMusician(): Musician {
         return musiciansQueue.pop();
     }
