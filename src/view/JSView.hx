@@ -66,6 +66,7 @@ class JSView extends View {
     override function drawCone() {
         context.fillStyle = 'rgba(0, 255, 0, 0.5)';
         context.strokeStyle = 'rgb(0, 255, 0)';
+        context.lineWidth = 1;
         context.beginPath();
         context.moveTo(centerX, centerY);
         context.arc(centerX, centerY, venue.getStage().getCone().radius, startAngle, endAngle);
