@@ -10,7 +10,7 @@ import model.entities.MerchStore;
 import utils.Point;
 import model.MusicVenue;
 
-typedef ModelBuilderSong = {_name: String, _duration: Int};
+typedef ModelBuilderSong = {_name: String, _duration: Int, _quality: Int};
 
 typedef ModelBuilderMusician = {
     var x: Float;
@@ -128,8 +128,8 @@ class ModelBuilder {
         return this;
     }
 
-    public function addSongToList(name: String, duration: Int) {
-        songsPrototype.add({_name: name, _duration: duration});
+    public function addSongToList(name: String, duration: Int, quality: Int) {
+        songsPrototype.add({_name: name, _duration: duration, _quality: quality});
 
         return this;
     }
@@ -175,7 +175,7 @@ class ModelBuilder {
         for (v in musicians) {
             var musician = new Musician(v.x, v.y, v.name, v.tuneUpDuration, stage);
             for (s in v.songs) {
-                musician.addSong(new Song(s._name, s._duration));
+                musician.addSong(new Song(s._name, s._duration, s._quality));
             }
             venue.addMusician(musician);
         }

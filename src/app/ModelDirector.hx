@@ -30,7 +30,7 @@ class ModelDirector {
         for (v in config.musicians) {
             builder.setMusicianData(i * 45, 35, v.name, v.tuneUp);
             for (s in v.songs) {
-                builder.addSongToList(s.name, s.duration);
+                builder.addSongToList(s.name, s.duration, s.quality);
             }
             builder.addMusician();
 

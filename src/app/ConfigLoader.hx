@@ -3,7 +3,7 @@ package app;
 typedef MusicianConfig = {
     var name: String;
     var tuneUp: Int;
-    var songs: Array<{name: String, duration: Int}>;
+    var songs: Array<{name: String, duration: Int, quality: Int}>;
 } 
 
 typedef AppConfig = {
