@@ -48,6 +48,8 @@ class ListenerWalkToStoreState extends StateOf<Listener> {
                 }
             }
 
+            owner.boughtItem = true;
+
             fsm.setState(new ListenerWalkToSceneState(fsm));
             return;
         }

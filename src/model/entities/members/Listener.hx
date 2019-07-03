@@ -13,6 +13,7 @@ class Listener extends ConcertMember {
 
     public var mood(default, set): Int;
     public var money(default, set): Int;
+    public var boughtItem(default, default): Bool = false;
 
     public function new(x: Float, y: Float, mood: Int, money: Int, ?stage: Stage, ?store: MerchStore) {
         super(x, y, stage);
