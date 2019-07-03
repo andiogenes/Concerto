@@ -15,7 +15,8 @@ class Application {
         new ModelDirector(config, builder).make();
 
         var model = builder.getModel();
-
         var view = View.create(model);
+
+        model.startConcert();
     }
 }

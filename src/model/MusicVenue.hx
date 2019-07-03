@@ -33,6 +33,12 @@ class MusicVenue {
         }
     }
 
+    public function startConcert() {
+        if (stage != null) {
+            stage.callCurrentMusicianToScene();
+        }
+    }
+
     public function addListener(listener: Listener) {
         members.add(listener);
         
