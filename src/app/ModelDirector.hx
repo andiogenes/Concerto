@@ -28,7 +28,10 @@ class ModelDirector {
 
         var i = 1;
         for (v in config.musicians) {
-            builder.setMusicianData(i * 45, 35, v.name, v.tuneUp);
+            var x = i * 45;
+            var y = 35;
+
+            builder.setMusicianData(x, y, v.name, v.tuneUp);
             for (s in v.songs) {
                 builder.addSongToList(s.name, s.duration, s.quality);
             }
@@ -41,11 +44,14 @@ class ModelDirector {
         for (i in 0...listenersCount) {
             var x = if (Math.random() > 0.5) 0 else config.width;
             var y = if (Math.random() > 0.5) 0 else config.height;
+            var mood = 40;
+            var money = utils.Random.randomize(config.minListenerMoney, config.maxListenerMoney);
+            
             builder.addListener(
                 x + Math.random() * 128 - 64, 
                 y + Math.random() * 128 - 64,
-                40,
-                utils.Random.randomize(config.minListenerMoney, config.maxListenerMoney)
+                mood,
+                money
             );
         }
     }
