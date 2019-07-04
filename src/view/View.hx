@@ -94,11 +94,11 @@ class View {
 
                 case Listener.TYPE:
                     var listener: Listener = cast(v);
-                    if (listener.mood >= 80) {
+                    if (listener.mood >= Listener.HOT_MOOD_THRESHOLD) {
                         listenerHotDisplay.draw(listener.x, listener.y);
-                    } else if (listener.mood >= 60 && listener.mood < 80) {
+                    } else if (listener.mood >= Listener.ENGAGED_MOOD_THRESHOLD && listener.mood < Listener.HOT_MOOD_THRESHOLD) {
                         listenerEngagedDisplay.draw(listener.x, listener.y);
-                    } else if (listener.mood >= 40 && listener.mood < 60) {
+                    } else if (listener.mood >= Listener.NORMAL_MOOD_THRESHOLD && listener.mood < Listener.ENGAGED_MOOD_THRESHOLD) {
                         listenerNormalDisplay.draw(listener.x, listener.y);
                     } else {
                         listenerSadDisplay.draw(listener.x, listener.y);

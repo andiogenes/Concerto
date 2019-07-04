@@ -38,7 +38,7 @@ class ListenerListenState extends StateOf<Listener> {
         }
 
         // Mood >= 80 => walk to store
-        if (owner.mood >= 80 && !owner.boughtItem) {
+        if (owner.mood >= Listener.HOT_MOOD_THRESHOLD && !owner.boughtItem) {
             stage.listenersCount--;
             fsm.setState(new ListenerWalkToStoreState(fsm));
             return;

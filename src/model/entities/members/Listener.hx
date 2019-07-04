@@ -6,6 +6,9 @@ import model.states.ListenerWalkToSceneState;
 
 class Listener extends ConcertMember {
     public static final TYPE: String = "Listener";
+    public static final NORMAL_MOOD_THRESHOLD: Int = 40;
+    public static final ENGAGED_MOOD_THRESHOLD: Int = 60;
+    public static final HOT_MOOD_THRESHOLD: Int = 80;
 
     private var fsm: StateMachineOf<Listener>;
 
