@@ -19,6 +19,8 @@ class Stage {
     public var capacity(default, null): Int = 0;
     public var listenersCount(default, set): Int = 0;
 
+    public var isInPreparation(default, default): Bool = false;
+
     public function new(x: Float, y: Float) {
         position = new Point(x, y);
 

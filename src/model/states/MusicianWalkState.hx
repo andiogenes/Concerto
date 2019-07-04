@@ -14,6 +14,8 @@ class MusicianWalkState extends StateOf<Musician> {
         super(fsm);
 
         stage = owner.getStage();
+        
+        stage.isInPreparation = true;
     }
 
     override public function update() {

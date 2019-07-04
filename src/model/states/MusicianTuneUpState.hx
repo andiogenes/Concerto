@@ -14,6 +14,7 @@ class MusicianTuneUpState extends StateOf<Musician> {
 
     override public function update() {
         if (elapsed >= owner.tuneUpDuration) {
+            owner.getStage().isInPreparation = false;
             fsm.setState(new MusicianPlaySetState(fsm));
             return;
         }
