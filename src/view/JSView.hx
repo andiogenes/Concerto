@@ -16,11 +16,9 @@ class JSView extends View {
 
     override function init() {
         canvas = Browser.document.createCanvasElement();
-        canvas.id = "concerto:canvas";
+        canvas.id = "concerto_canvas";
         canvas.width = Std.int(venue.width);
         canvas.height = Std.int(venue.height);
-		canvas.style.width = canvas.width + "px";
-		canvas.style.height = canvas.height + "px";
         canvas.style.backgroundColor = "#f1f1f1";
 
         context = canvas.getContext2d();
