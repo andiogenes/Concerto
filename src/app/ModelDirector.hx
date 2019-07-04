@@ -42,8 +42,20 @@ class ModelDirector {
 
         var listenersCount = utils.Random.randomize(config.minListeners, config.maxListeners);
         for (i in 0...listenersCount) {
-            var x = if (Math.random() > 0.5) 0 else config.width;
-            var y = if (Math.random() > 0.5) 0 else config.height;
+            var isVerticalArrangement = Math.random() > 0.5;
+
+            var x = if (isVerticalArrangement) {
+                if (Math.random() > 0.5) 0 else config.width;
+            } else {
+                utils.Random.randomizeF(0, config.width);
+            }
+
+            var y = if (isVerticalArrangement) {
+                utils.Random.randomizeF(0, config.height);
+            } else {
+                if (Math.random() > 0.5) 0 else config.height;
+            }
+
             var mood = 40;
             var money = utils.Random.randomize(config.minListenerMoney, config.maxListenerMoney);
             
