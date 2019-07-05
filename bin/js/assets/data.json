@@ -2,7 +2,7 @@
     "width": 800,
     "height": 600,
     "minListeners": 100,
-    "maxListeners": 200,
+    "maxListeners": 300,
     "minListenerMoney": 50,
     "maxListenerMoney": 150,
     "store": {
@@ -26,23 +26,30 @@
             "name": "Tool",
             "tuneUp": 30,
             "songs": [
-                {"name": "Lateralus", "duration": 36, "quality": 5},
-                {"name": "Rosetta Stoned", "duration": 48, "quality": 10}
+                {"name": "Lateralus", "duration": 36, "quality": 100},
+                {"name": "Rosetta Stoned", "duration": 48, "quality": 100}
             ]
         },
         {
             "name": "Cream",
             "tuneUp": 10,
             "songs": [
-                {"name": "White Room", "duration": 65, "quality": 6},
-                {"name": "Ballad of Brave Ulysses", "duration": 123, "quality": 8}
+                {"name": "White Room", "duration": 65, "quality": 100},
+                {"name": "Ballad of Brave Ulysses", "duration": 123, "quality": 100}
             ]
         },
         {
-            "name": "Darude",
+            "name": "Rammstein",
             "tuneUp": 45,
             "songs": [
-                {"name": "Sand Storm", "duration": 345, "quality": 4}
+                {"name": "ROMSTAIN", "duration": 345, "quality": 40}
+            ]
+        },
+        {
+            "name": "Джастин Бибер",
+            "tuneUp": 45,
+            "songs": [
+                {"name": "Грустная песня", "duration": 1200000, "quality": 0}
             ]
         }
     ]
